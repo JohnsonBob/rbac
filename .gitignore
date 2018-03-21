@@ -17,3 +17,6 @@ Thumbs.db
 
 # runtime
 /runtime
+
+# composer vendor dir
+/vendor
