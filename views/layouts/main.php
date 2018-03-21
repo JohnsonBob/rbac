@@ -26,7 +26,7 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
     <!--导航条-->
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -37,42 +37,42 @@ AppAsset::register($this);
             <div class="collapse navbar-collapse" >
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">首页</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
                 </ul>
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+                <p class="navbar-text navbar-right">Hi,Johnson</p>
+            </div>
+        </div>
     </nav>
+
+<!--    菜单栏和内容区域-->
+    <div class="container-fluid">
+        <div class="col-sm-2 col-md-2 col-lg-2 sidebar">
+            <!--            菜单栏区域-->
+            <ul class="nav nav-sidebar">
+                <li >演示权限界面</li>
+                <li><a href="#">测试界面一</a></li>
+                <li><a href="#">测试界面二</a></li>
+                <li><a href="#">测试界面三</a></li>
+                <li><a href="#">测试界面四</a></li>
+
+                <li >系统设置</li>
+                <li><a href="#">用户管理</a></li>
+                <li><a href="#">角色管理</a></li>
+                <li><a href="#">权限管理</a></li>
+            </ul>
+        </div>
+
+        <div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset2 col-lg-10 col-lg-offset2">
+            <!--            内容区域-->
+            <?=$content;?>
+
+            <hr/>
+            <footer>
+                <p class="pull-left">@Johnson RBAC</p>
+                <p class="pull-right">Power By 慕课 www.imooc.com</p>
+            </footer>
+        </div>
+    </div>
+
 <?php $this->endBody() ?>
 </body>
 </html>
