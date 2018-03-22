@@ -5,24 +5,22 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "user".
+ * This is the model class for table "role_access".
  *
  * @property int $id
- * @property string $name 用户名
- * @property string $email 用户邮箱
- * @property int $is_admin 状态1表示是管理员 0表示不是管理员
- * @property int $status 状态1表示是有效 0表示无效
+ * @property int $role_id 对应角色表中的id
+ * @property int $access_id 对应权限表中的id
  * @property string $updated_time 最后一次更新时间
  * @property string $created_time 创建时间
  */
-class User extends \yii\db\ActiveRecord
+class RoleAccess extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'user';
+        return 'role_access';
     }
 
     /**
@@ -31,11 +29,8 @@ class User extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['email'], 'required'],
+            [['role_id', 'access_id'], 'integer'],
             [['updated_time', 'created_time'], 'safe'],
-            [['name'], 'string', 'max' => 20],
-            [['email'], 'string', 'max' => 30],
-            [['is_admin', 'status'], 'string', 'max' => 1],
         ];
     }
 
@@ -46,10 +41,8 @@ class User extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'email' => 'Email',
-            'is_admin' => 'Is Admin',
-            'status' => 'Status',
+            'role_id' => 'Role ID',
+            'access_id' => 'Access ID',
             'updated_time' => 'Updated Time',
             'created_time' => 'Created Time',
         ];
