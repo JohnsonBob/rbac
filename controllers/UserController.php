@@ -26,12 +26,10 @@ class UserController extends BaseController
             return UrlService::buildUrl('/');
         }
         //用户信息存在 cookie保存用户的登录状态 需要加密cookie 规则user_anth_token + "#" + uid
-        $user_anth_token = md5($user_info['id'].$user_info['name'].$user_info['email'].$_SERVER('HTTP_USER_AGENT'));
-        $cookie_target = \Yii::$app->request->cookies;
-        $cookie_target->add(new Cookie([
-            'name' => "immoc_888",
-            "value" => $user_anth_token.'#'.$user_info['id'],
-        ]));
+        $this->createLoginStatus($user_info);
         return $this->redirect(UrlService::buildUrl('/'));
+    }
+    public function actionLogin(){
+        return $this->render('login');
     }
 }
