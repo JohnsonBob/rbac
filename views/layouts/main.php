@@ -9,6 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use \app\services\UrlService;
 
 AppAsset::register($this);
 ?>
@@ -49,8 +50,8 @@ AppAsset::register($this);
             <!--            菜单栏区域-->
             <ul class="nav nav-sidebar">
                 <li >演示权限界面</li>
-                <li><a href="#">测试界面一</a></li>
-                <li><a href="#">测试界面二</a></li>
+                <li><a href="<?=UrlService::buildUrl("/test/page2");?>">测试界面一</a></li>
+                <li><a href="<?=UrlService::buildUrl("/test/page2");?>">测试页面二</a></li>
                 <li><a href="#">测试界面三</a></li>
                 <li><a href="#">测试界面四</a></li>
 

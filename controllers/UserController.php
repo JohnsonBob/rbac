@@ -31,7 +31,6 @@ class UserController extends BaseController
         return $this->redirect(UrlService::buildUrl('/'));
     }
     public function actionLogin(){
-        var_dump('actionVlogin');
         return $this->render("login",[
             'host' => $_SERVER['HTTP_HOST']
         ]);
