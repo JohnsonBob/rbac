@@ -88,9 +88,9 @@ class BaseController extends Controller
             if($auth_token != $this->createAuthToken($userinfo['id'],$userinfo['name'],$userinfo['email'],$_SERVER['HTTP_USER_AGENT'])){
                 return false;
             }
-//            $this->current_user = $userinfo;
-//            $view = \Yii::$app->view;
-//            $view->params['current_user'] = $userinfo;
+            $this->current_user = $userinfo;
+            $view = \Yii::$app->view;
+            $view->params['current_user'] = $userinfo;
             return true;
         }
         return false;

@@ -39,14 +39,16 @@ AppAsset::register($this);
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">首页</a></li>
                 </ul>
-                <p class="navbar-text navbar-right">Hi,Johnson</p>
+                <?php if(isset($this->params['current_user'])): ?>
+                <p class="navbar-text navbar-right">Hi,<?=$this->params['current_user']['name']?></p>
+                <?php endif?>
             </div>
         </div>
     </nav>
 
 <!--    菜单栏和内容区域-->
-    <div class="container-fluid">
-        <div class="col-sm-2 col-md-2 col-lg-2 sidebar">
+    <div class="container-fluid"style="margin-top: 60px">
+        <div class="col-sm-2 col-md-2  sidebar">
             <!--            菜单栏区域-->
             <ul class="nav nav-sidebar">
                 <li >演示权限界面</li>
@@ -62,7 +64,7 @@ AppAsset::register($this);
             </ul>
         </div>
 
-        <div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset2 col-lg-10 col-lg-offset2">
+        <div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 col-lg-6 col-lg-offset-2 sidebar">
             <!--            内容区域-->
             <?=$content;?>
 
