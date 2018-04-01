@@ -59,7 +59,7 @@ AppAsset::register($this);
 
                 <li >系统设置</li>
                 <li><a href="#">用户管理</a></li>
-                <li><a href="#">角色管理</a></li>
+                <li><a href="<?=UrlService::buildUrl('/role/index');?>">角色管理</a></li>
                 <li><a href="#">权限管理</a></li>
             </ul>
         </div>
